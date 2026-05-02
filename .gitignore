@@ -1,0 +1,65 @@
+# Safe-by-default public dotfiles repository for ~/.pi
+# Everything is ignored first; only curated, shareable config is allowed below.
+*
+
+# Repository metadata/docs
+!.gitignore
+!.gitleaks.toml
+!README.md
+!SECURITY.md
+
+# Global Context Tree config and public norms
+!CONTEXT.json
+!norm/
+!norm/**
+
+# Pi agent settings that describe UI/package preferences, not credentials
+!agent/
+!agent/settings.json
+
+# Public extension configuration
+!agent/extensions/
+!agent/extensions/pi-rtk-optimizer/
+!agent/extensions/pi-rtk-optimizer/config.json
+
+# Custom skills are private by default. Explicitly unignore only audited public skills.
+# !agent/skills/<public-skill>/
+# !agent/skills/<public-skill>/**
+
+# Always keep local/private/generated Pi state out of Git
+agent/auth.json
+agent/run-history.jsonl
+agent/sessions/
+agent/git/
+agent/bin/
+pi-acp/
+
+# Caches and generated artifacts
+.pi/
+.cache/
+cache/
+tmp/
+temp/
+*.log
+*.jsonl
+*.plan.md
+subagent-artifacts/
+
+# Windows/WSL alternate data stream marker files
+*:Zone.Identifier
+
+# Private/local skills
+agent/skills/
+
+# Secrets and machine-local overrides, even inside allowlisted folders
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*secret*
+*token*
+*credential*
+*credentials*

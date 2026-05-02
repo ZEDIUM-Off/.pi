@@ -1,0 +1,24 @@
+{
+  "lastChangelogVersion": "0.72.1",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.5",
+  "defaultThinkingLevel": "minimal",
+  "treeFilterMode": "default",
+  "theme": "dark",
+  "packages": [
+    "npm:pi-mermaid",
+    "npm:pi-ask-user",
+    "npm:pi-web-access",
+    "npm:pi-skill-palette",
+    "npm:pi-tool-display",
+    "npm:pi-rtk-optimizer",
+    "npm:@lpirito/pi-diffloop",
+    "npm:pi-smart-fetch",
+    "npm:@kaiserlich-dev/pi-session-search",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:pi-subagents",
+    "git:github.com/ZEDIUM-Off/pi-context-tree",
+    "npm:pi-peon-ping",
+    "npm:@ifi/pi-plan"
+  ]
+}

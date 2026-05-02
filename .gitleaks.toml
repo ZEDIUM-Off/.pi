@@ -1,0 +1,16 @@
+title = "Pi public config secret scanning"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "pi-auth-json"
+description = "Pi auth file must never be committed"
+regex = '''(?i)(agent/auth\.json|\"refresh\"\s*:|\"access\"\s*:)'''
+tags = ["pi", "auth"]
+
+[[rules]]
+id = "session-transcript"
+description = "Pi session transcripts often contain private prompts and code"
+regex = '''(?i)(agent/sessions/|\.jsonl$|sessionFile)'''
+tags = ["pi", "sessions"]
