@@ -1,13 +1,11 @@
 {
-  "lastChangelogVersion": "0.72.1",
+  "lastChangelogVersion": "0.78.0",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
-  "defaultThinkingLevel": "minimal",
+  "defaultThinkingLevel": "medium",
   "treeFilterMode": "default",
   "theme": "dark",
   "packages": [
-    "npm:pi-mermaid",
-    "npm:pi-ask-user",
     "npm:pi-web-access",
     "npm:pi-skill-palette",
     "npm:pi-tool-display",
@@ -15,10 +13,19 @@
     "npm:@lpirito/pi-diffloop",
     "npm:pi-smart-fetch",
     "npm:@kaiserlich-dev/pi-session-search",
-    "npm:@juicesharp/rpiv-todo",
-    "npm:pi-subagents",
-    "git:github.com/ZEDIUM-Off/pi-context-tree",
     "npm:pi-peon-ping",
-    "npm:@ifi/pi-plan"
-  ]
+    "git:https://github.com/ZEDIUM-Off/pi-subagents.git",
+    "npm:@calesennett/pi-codex-usage",
+    "npm:@nonplanarslicer/pi-save-output",
+    "https://github.com/omaclaren/pi-studio",
+    "git:github.com/ZEDIUM-Off/pi-context-tree"
+  ],
+  "quietStartup": true,
+  "pi-codex-usage": {
+    "usageMode": "left",
+    "refreshWindow": "7d"
+  },
+  "terminal": {
+    "showTerminalProgress": false
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/ZEDIUM-Off/pi-context-tree/v0.4.1/schemas/context.schema.json",
+  "$schema": "https://raw.githubusercontent.com/ZEDIUM-Off/pi-context-tree/v0.4.2/schemas/context.schema.json",
   "stability": {
     "state": "canonical",
     "summary": "Global deterministic norm injection for Pi agents with path and content-regexp overlays.",
