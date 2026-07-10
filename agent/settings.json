@@ -1,10 +1,13 @@
 {
-  "lastChangelogVersion": "0.78.0",
+  "lastChangelogVersion": "0.80.6",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.5",
-  "defaultThinkingLevel": "medium",
+  "defaultModel": "gpt-5.6-terra",
+  "defaultThinkingLevel": "low",
   "treeFilterMode": "default",
   "theme": "dark",
+  "npmCommand": [
+    "pnpm"
+  ],
   "packages": [
     "npm:pi-web-access",
     "npm:pi-skill-palette",
@@ -14,11 +17,12 @@
     "npm:pi-smart-fetch",
     "npm:@kaiserlich-dev/pi-session-search",
     "npm:pi-peon-ping",
-    "git:https://github.com/ZEDIUM-Off/pi-subagents.git",
     "npm:@calesennett/pi-codex-usage",
     "npm:@nonplanarslicer/pi-save-output",
     "https://github.com/omaclaren/pi-studio",
-    "git:github.com/ZEDIUM-Off/pi-context-tree"
+    "git:github.com/DietrichGebert/ponytail",
+    "npm:@a-fig/accordion",
+    "git:https://github.com/nicobailon/pi-subagents"
   ],
   "quietStartup": true,
   "pi-codex-usage": {
