@@ -1,19 +1,19 @@
 {
-  "lastChangelogVersion": "0.80.6",
+  "lastChangelogVersion": "0.80.10",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-terra",
-  "defaultThinkingLevel": "low",
+  "defaultModel": "gpt-5.6-sol",
+  "defaultThinkingLevel": "high",
   "treeFilterMode": "default",
   "theme": "dark",
   "npmCommand": [
-    "pnpm"
+    "pnpm",
+    "--config.dangerously-allow-all-builds=true"
   ],
   "packages": [
     "npm:pi-web-access",
     "npm:pi-skill-palette",
     "npm:pi-tool-display",
     "npm:pi-rtk-optimizer",
-    "npm:@lpirito/pi-diffloop",
     "npm:pi-smart-fetch",
     "npm:@kaiserlich-dev/pi-session-search",
     "npm:pi-peon-ping",
@@ -22,7 +22,8 @@
     "https://github.com/omaclaren/pi-studio",
     "git:github.com/DietrichGebert/ponytail",
     "npm:@a-fig/accordion",
-    "git:https://github.com/nicobailon/pi-subagents"
+    "git:https://github.com/nicobailon/pi-subagents",
+    "git:github.com/ZEDIUM-Off/pi-runtime-monitor"
   ],
   "quietStartup": true,
   "pi-codex-usage": {

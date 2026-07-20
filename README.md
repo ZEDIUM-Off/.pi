@@ -81,11 +81,13 @@ C'est ma réponse au problème classique des assistants IA : trop de contexte, m
 `agent/settings.json` référence les extensions que j'utilise dans mon workflow, notamment :
 
 - `pi-context-tree` — routage déterministe du contexte ;
-- `pi-rtk-optimizer` — optimisation/compaction de sorties outils ;
+- `pi-runtime-monitor` — suivi local du PID, du CPU, de la mémoire et des sous-agents liés à la session ;
 - `pi-subagents` — délégation à des sous-agents ;
-- `pi-ask-user` — handshake explicite quand une décision nécessite l'utilisateur ;
+- `pi-rtk-optimizer` / `pi-tool-display` — optimisation et affichage compact des sorties outils ;
 - `pi-web-access` / `pi-smart-fetch` — recherche et récupération de contenu ;
-- `rpiv-todo` — suivi de tâches pendant l'exécution agent.
+- `pi-session-search` / `pi-studio` — navigation dans les sessions et environnement de travail ;
+- `accordion` — gestion du contexte long par pliage et rappel ciblé ;
+- `ponytail` — garde-fou contre la sur-ingénierie.
 
 ## Ce que ce dépôt n'est pas
 
