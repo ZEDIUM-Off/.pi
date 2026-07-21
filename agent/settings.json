@@ -23,7 +23,7 @@
     "git:github.com/DietrichGebert/ponytail",
     "npm:@a-fig/accordion",
     "git:https://github.com/nicobailon/pi-subagents",
-    "git:github.com/ZEDIUM-Off/pi-runtime-monitor"
+    "git:github.com/ZEDIUM-Off/pi-runtime-monitor",
     "npm:pi-intercom@0.6.0"
   ],
   "quietStartup": true,
