@@ -1,43 +1,81 @@
 {
-  "lastChangelogVersion": "0.80.10",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-sol",
-  "defaultThinkingLevel": "high",
+  "defaultTools": [
+    "+codemode"
+  ],
+  "lastChangelogVersion": "1.5.0",
+  "defaultProvider": "openai",
+  "defaultModel": "gpt-6-astra",
+  "defaultThinkingLevel": "medium",
+  "theme": "system",
+  "compaction": {
+    "enabled": true
+  },
+  "quietStartup": true,
+  "packages": [
+    "npm:pi-web-access",
+    "npm:pi-tool-display",
+    "npm:@kaiserlich-dev/pi-session-search",
+    "npm:@calesennett/pi-codex-usage",
+    "npm:@nonplanarslicer/pi-save-output",
+    "https://github.com/omaclaren/pi-studio",
+    "git:https://github.com/nicobailon/pi-subagents",
+    "git:github.com/ZEDIUM-Off/pi-runtime-monitor",
+    "git:github.com/DietrichGebert/ponytail",
+    "git:github.com/joaomj/pi-claude-directsdk",
+    "git:https://github.com/nicobailon/pi-intercom",
+    "https://github.com/samfoy/pi-lsp-extension",
+    "npm:pi-context-view",
+    "npm:pi-messenger",
+    "npm:@a-fig/accordion",
+    "git:github.com/catlain/pi-session-analyzer",
+    "npm:pi-smart-fetch"
+  ],
+  "terminal": {
+    "showTerminalProgress": false
+  },
+  "images": {
+    "autoResize": false
+  },
+  "enabledModels": [
+    "openai/gpt-6-astra",
+    "openai/gpt-6.1-sol",
+    "openai/gpt-6-luna",
+    "claude-directsdk/claude-fable-5-1",
+    "claude-directsdk/claude-opus-5-5",
+    "claude-directsdk/claude-sonnet-5-5",
+    "claude-directsdk/claude-haiku-5-5"
+  ],
   "treeFilterMode": "default",
-  "theme": "dark",
   "npmCommand": [
     "pnpm",
     "--config.dangerously-allow-all-builds=true"
   ],
-  "packages": [
-    "npm:pi-web-access",
-    "npm:pi-skill-palette",
-    "npm:pi-tool-display",
-    "npm:pi-rtk-optimizer",
-    "npm:pi-smart-fetch",
-    "npm:@kaiserlich-dev/pi-session-search",
-    "npm:pi-peon-ping",
-    "npm:@calesennett/pi-codex-usage",
-    "npm:@nonplanarslicer/pi-save-output",
-    "https://github.com/omaclaren/pi-studio",
-    "git:github.com/DietrichGebert/ponytail",
-    "npm:@a-fig/accordion",
-    "git:https://github.com/nicobailon/pi-subagents",
-    "git:github.com/ZEDIUM-Off/pi-runtime-monitor",
-    "npm:pi-intercom@0.6.0"
-  ],
-  "quietStartup": true,
   "pi-codex-usage": {
-    "usageMode": "left",
-    "refreshWindow": "7d"
+    "refreshWindow": "7d",
+    "usageMode": "left"
   },
-  "terminal": {
-    "showTerminalProgress": false
-  },
-  "enabledModels": [
-    "openai-codex/gpt-5.6-terra",
-    "openai-codex/gpt-5.6-sol",
-    "openai-codex/gpt-5.6-luna",
-    "openai-codex/gpt-5.5"
-  ]
+  "tuiMode": "regular",
+  "showCacheMissNotices": true,
+  "skills": [
+    "-/home/zedium/.agents/skills/synced/3aaec992-1335-4788-a3f4-1a4f8dfb06c3_5296ca25-2b10-4d9d-9994-aebd7b6d065e/docx/SKILL.md",
+    "-/home/zedium/.agents/skills/synced/3aaec992-1335-4788-a3f4-1a4f8dfb06c3_5296ca25-2b10-4d9d-9994-aebd7b6d065e/pdf/SKILL.md",
+    "-/home/zedium/.agents/skills/synced/3aaec992-1335-4788-a3f4-1a4f8dfb06c3_5296ca25-2b10-4d9d-9994-aebd7b6d065e/pptx/SKILL.md",
+    "-/home/zedium/.agents/skills/xlsx/SKILL.md",
+    "-/home/zedium/.agents/skills/ponytail/SKILL.md",
+    "-/home/zedium/.agents/skills/ponytail-audit/SKILL.md",
+    "-/home/zedium/.agents/skills/ponytail-debt/SKILL.md",
+    "-/home/zedium/.agents/skills/ponytail-gain/SKILL.md",
+    "-/home/zedium/.agents/skills/ponytail-help/SKILL.md",
+    "-/home/zedium/.agents/skills/ponytail-review/SKILL.md"
+  ],
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.46.0",
+    "{\"source\":\"npm:pi-tool-display\",\"scope\":\"user\"}": "0.5.0",
+    "{\"source\":\"https://github.com/omaclaren/pi-studio\",\"scope\":\"user\"}": "0.11.7",
+    "{\"source\":\"git:https://github.com/nicobailon/pi-subagents\",\"scope\":\"user\"}": "0.84.0",
+    "{\"source\":\"git:github.com/ZEDIUM-Off/pi-runtime-monitor\",\"scope\":\"user\"}": "0.1.1",
+    "{\"source\":\"git:https://github.com/nicobailon/pi-intercom\",\"scope\":\"user\"}": "0.18.1",
+    "{\"source\":\"https://github.com/samfoy/pi-lsp-extension\",\"scope\":\"user\"}": "1.4.0",
+    "{\"source\":\"npm:pi-messenger\",\"scope\":\"user\"}": "0.15.2"
+  }
 }
