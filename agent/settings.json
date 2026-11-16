@@ -2,7 +2,7 @@
   "defaultTools": [
     "+codemode"
   ],
-  "lastChangelogVersion": "1.5.0",
+  "lastChangelogVersion": "1.5.2",
   "defaultProvider": "openai",
   "defaultModel": "gpt-6-astra",
   "defaultThinkingLevel": "medium",
@@ -17,18 +17,19 @@
     "npm:@kaiserlich-dev/pi-session-search",
     "npm:@calesennett/pi-codex-usage",
     "npm:@nonplanarslicer/pi-save-output",
-    "https://github.com/omaclaren/pi-studio",
     "git:https://github.com/nicobailon/pi-subagents",
     "git:github.com/ZEDIUM-Off/pi-runtime-monitor",
-    "git:github.com/DietrichGebert/ponytail",
     "git:github.com/joaomj/pi-claude-directsdk",
     "git:https://github.com/nicobailon/pi-intercom",
     "https://github.com/samfoy/pi-lsp-extension",
     "npm:pi-context-view",
-    "npm:pi-messenger",
     "npm:@a-fig/accordion",
     "git:github.com/catlain/pi-session-analyzer",
-    "npm:pi-smart-fetch"
+    "npm:pi-smart-fetch",
+    "git:github.com/ItsNerisma/pi-auto-title",
+    "npm:pi-codex-image-gen",
+    "npm:pi-tasks",
+    "npm:pi-split-view"
   ],
   "terminal": {
     "showTerminalProgress": false
@@ -43,7 +44,9 @@
     "claude-directsdk/claude-fable-5-1",
     "claude-directsdk/claude-opus-5-5",
     "claude-directsdk/claude-sonnet-5-5",
-    "claude-directsdk/claude-haiku-5-5"
+    "claude-directsdk/claude-haiku-5-5",
+    "claude-directsdk/claude-fable-5-2",
+    "openai/gpt-6.1-terra"
   ],
   "treeFilterMode": "default",
   "npmCommand": [
@@ -54,28 +57,22 @@
     "refreshWindow": "7d",
     "usageMode": "left"
   },
-  "tuiMode": "regular",
+  "tuiMode": "fullscreen",
   "showCacheMissNotices": true,
-  "skills": [
-    "-/home/zedium/.agents/skills/synced/3aaec992-1335-4788-a3f4-1a4f8dfb06c3_5296ca25-2b10-4d9d-9994-aebd7b6d065e/docx/SKILL.md",
-    "-/home/zedium/.agents/skills/synced/3aaec992-1335-4788-a3f4-1a4f8dfb06c3_5296ca25-2b10-4d9d-9994-aebd7b6d065e/pdf/SKILL.md",
-    "-/home/zedium/.agents/skills/synced/3aaec992-1335-4788-a3f4-1a4f8dfb06c3_5296ca25-2b10-4d9d-9994-aebd7b6d065e/pptx/SKILL.md",
-    "-/home/zedium/.agents/skills/xlsx/SKILL.md",
-    "-/home/zedium/.agents/skills/ponytail/SKILL.md",
-    "-/home/zedium/.agents/skills/ponytail-audit/SKILL.md",
-    "-/home/zedium/.agents/skills/ponytail-debt/SKILL.md",
-    "-/home/zedium/.agents/skills/ponytail-gain/SKILL.md",
-    "-/home/zedium/.agents/skills/ponytail-help/SKILL.md",
-    "-/home/zedium/.agents/skills/ponytail-review/SKILL.md"
-  ],
+  "skills": [],
   "extensionChangelogVersions": {
-    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.46.0",
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.47.0",
     "{\"source\":\"npm:pi-tool-display\",\"scope\":\"user\"}": "0.5.0",
-    "{\"source\":\"https://github.com/omaclaren/pi-studio\",\"scope\":\"user\"}": "0.11.7",
-    "{\"source\":\"git:https://github.com/nicobailon/pi-subagents\",\"scope\":\"user\"}": "0.84.0",
+    "{\"source\":\"https://github.com/omaclaren/pi-studio\",\"scope\":\"user\"}": "0.11.13",
+    "{\"source\":\"git:https://github.com/nicobailon/pi-subagents\",\"scope\":\"user\"}": "0.88.0",
     "{\"source\":\"git:github.com/ZEDIUM-Off/pi-runtime-monitor\",\"scope\":\"user\"}": "0.1.1",
     "{\"source\":\"git:https://github.com/nicobailon/pi-intercom\",\"scope\":\"user\"}": "0.18.1",
     "{\"source\":\"https://github.com/samfoy/pi-lsp-extension\",\"scope\":\"user\"}": "1.4.0",
-    "{\"source\":\"npm:pi-messenger\",\"scope\":\"user\"}": "0.15.2"
+    "{\"source\":\"npm:pi-messenger\",\"scope\":\"user\"}": "0.15.2",
+    "{\"source\":\"git:github.com/ItsNerisma/pi-auto-title\",\"scope\":\"user\"}": "1.0.1",
+    "{\"source\":\"npm:pi-codex-image-gen\",\"scope\":\"user\"}": "0.3.1",
+    "{\"source\":\"npm:pi-context-view\",\"scope\":\"user\"}": "0.8.4",
+    "{\"source\":\"npm:pi-tasks\",\"scope\":\"user\"}": "0.3.1",
+    "{\"source\":\"npm:pi-split-view\",\"scope\":\"user\"}": "1.5.0"
   }
 }

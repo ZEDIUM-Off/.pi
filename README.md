@@ -2,9 +2,9 @@
 
 My personal [Pi](https://pi.dev/) extension selection and settings for software development. This is a reference for developers who already know Pi and want to complement their own setup, not a turnkey distribution or a set of agent instructions.
 
-The repository lives directly in my `~/.pi`. [agent/settings.json](agent/settings.json) is my active configuration, with the installation-specific `deviceId` omitted from commits. Models, preferences and machine-specific skill exclusions are intentionally retained so you can see the actual choices and adapt them.
+The repository lives directly in my `~/.pi`. [agent/settings.json](agent/settings.json) is my active configuration, with the installation-specific `deviceId` omitted from commits. Models and preferences are intentionally retained so you can see the actual choices and adapt them.
 
-**Environment:** used on Linux with Pi **1.5.0**. Pi and package versions are not pinned by this repository. Releases capture configuration choices, not reproducible dependency snapshots. I update the repository after substantial changes to my setup; there is no support or compatibility guarantee.
+**Environment:** used on Linux with Pi **1.5.2**. Pi and package versions are not pinned by this repository. Releases capture configuration choices, not reproducible dependency snapshots. I update the repository after substantial changes to my setup; there is no support or compatibility guarantee.
 
 ## Extension selection
 
@@ -19,20 +19,21 @@ The `packages` array in [settings.json](agent/settings.json) is authoritative. P
 | [pi-session-analyzer](https://github.com/catlain/pi-session-analyzer) | Inspect session history, branches and activity. |
 | [pi-codex-usage](https://www.npmjs.com/package/@calesennett/pi-codex-usage) | Provider usage visibility. |
 | [pi-save-output](https://www.npmjs.com/package/@nonplanarslicer/pi-save-output) | Save assistant output. |
-| [pi-studio](https://github.com/omaclaren/pi-studio) | Browser workspace, previews and REPL workflows. |
 | [pi-subagents](https://github.com/nicobailon/pi-subagents) | Delegate bounded work and run multi-agent workflows. |
 | [pi-intercom](https://github.com/nicobailon/pi-intercom) | Communicate between Pi sessions. |
-| [pi-messenger](https://www.npmjs.com/package/pi-messenger) | Agent coordination and Crew workflows. |
 | [pi-runtime-monitor](https://github.com/ZEDIUM-Off/pi-runtime-monitor) | Observe session processes, CPU and memory. |
 | [pi-lsp-extension](https://github.com/samfoy/pi-lsp-extension) | Code diagnostics and language-server navigation. |
 | [pi-context-view](https://www.npmjs.com/package/pi-context-view) | Inspect context. |
 | [accordion](https://www.npmjs.com/package/@a-fig/accordion) | Fold and recall long conversation context. |
-| [ponytail](https://github.com/DietrichGebert/ponytail) | Prefer small, complete solutions over unnecessary complexity. |
 | [pi-claude-directsdk](https://github.com/joaomj/pi-claude-directsdk) | Claude provider integration through the Claude Code executable. |
+| [pi-auto-title](https://github.com/ItsNerisma/pi-auto-title) | Generate session titles automatically. |
+| [pi-codex-image-gen](https://www.npmjs.com/package/pi-codex-image-gen) | Generate and edit images through the Codex backend. |
+| [pi-tasks](https://www.npmjs.com/package/pi-tasks) | Track task plans, acceptance criteria and verification evidence. |
+| [pi-split-view](https://www.npmjs.com/package/pi-split-view) | Show thinking, tool activity and files in separate TUI panels. |
 
 Codemode is enabled with `defaultTools: ["+codemode"]`. It is built into the Pi version used here, not another package to install.
 
-Some packages overlap intentionally: session search and analysis, web access and fetching, or different coordination workflows. Keep only what fits your use. Consult each package's documentation for its dependencies, authentication, capabilities and security implications. LSP requires suitable language servers; Studio's REPL workflows have additional runtime requirements; Claude Direct SDK requires its own supported Claude Code setup.
+Some packages overlap intentionally: session search and analysis, web access and fetching, or different coordination workflows. Keep only what fits your use. Consult each package's documentation for its dependencies, authentication, capabilities and security implications. LSP requires suitable language servers; Claude Direct SDK requires its own supported Claude Code setup.
 
 ## Reuse in an existing setup
 
@@ -53,8 +54,8 @@ Some packages overlap intentionally: session search and analysis, web access and
 
 - **Models:** `defaultProvider`, `defaultModel` and `enabledModels` reflect my access and preferences. They do not grant access or guarantee availability. Replace them as needed; private model catalogs and credentials are not included.
 - **Package manager:** my `npmCommand` uses `pnpm` with `--config.dangerously-allow-all-builds=true`. This permits dependency build scripts. It is a trust decision, not a requirement: remove the override to use Pi's default package manager, or choose your own policy.
-- **Skills:** the absolute exclusions are specific to my machine; remove or replace them for yours.
-- **UI and images:** the system theme, regular TUI, quiet startup and disabled image resizing are personal preferences. Keeping original image sizes can increase payloads.
+- **Skills:** the `skills` array is empty. Add your own resource filters if needed.
+- **UI and images:** the system theme, fullscreen TUI, quiet startup and disabled image resizing are personal preferences. Keeping original image sizes can increase payloads.
 - **Changelog markers:** `lastChangelogVersion` and `extensionChangelogVersions` record previously seen versions; they are not dependency pins. You can omit them when adapting the file.
 - **Device identity:** the published file omits `deviceId`. Let Pi generate your own installation identifier when needed; do not copy one from another installation.
 
@@ -62,11 +63,11 @@ Some packages overlap intentionally: session search and analysis, web access and
 
 I use `~/.agents/skills/` as my main shared skill directory. The Pi-managed locations under `~/.pi` are reserved for skills supplied by installed Pi extensions/packages. Those skills stay with their owning package so that package updates also update the skills.
 
-The `skills` exclusions in settings disable duplicate shared copies, including Ponytail skills and selected document skills. Paths beginning with `/home/zedium/` describe my machine, not directories you must create. This repository does not distribute my shared skills or agent instructions.
+The current settings have no explicit skill exclusions. This repository does not distribute my shared skills or agent instructions.
 
 ## Updates
 
-Commands verified against Pi 1.5.0's installed help and documentation:
+Commands verified against Pi 1.5.2's installed help and documentation:
 
 ```sh
 pi update                        # Update Pi itself
@@ -93,11 +94,11 @@ The live settings retain my device ID while the committed version omits it. Cons
 
 ## Verification and limits
 
-This refresh was prepared from a Linux installation running Pi 1.5.0. Preparation checks cover JSON validity, unpinned package declarations, the publication allowlist, exclusion of device identity from the commit, and the documented update command syntax.
+This refresh was prepared from a Linux installation running Pi 1.5.2. Preparation checks cover JSON validity, unpinned package declarations, the publication allowlist, exclusion of device identity from the commit, and the documented update command syntax.
 
 This is not a clean-install certification or an end-to-end test of every extension. Preparation did not update installed packages, exercise provider authentication or qualify macOS/Windows. A future installation may resolve newer dependencies than the ones used locally.
 
-Compared with the previous configuration, this refresh adds the current code-intelligence, context and coordination choices, removes the obsolete RTK Optimizer configuration, and replaces the outdated Context Tree/norms description. No Context Tree bundle or private workflow instructions are included.
+Compared with the previous publication, this refresh removes Pi Studio, Pi Messenger and Ponytail. It adds Split View, Tasks, Auto Title and Codex Image Gen to the published selection and reflects the current fullscreen TUI preference. No private workflow instructions are included.
 
 ## Maintenance and license
 
