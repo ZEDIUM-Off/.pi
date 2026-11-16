@@ -28,7 +28,6 @@ The `packages` array in [settings.json](agent/settings.json) is authoritative fo
 | [pi-claude-directsdk](https://github.com/joaomj/pi-claude-directsdk) | Claude provider integration through the Claude Code executable. |
 | [pi-auto-title](https://github.com/ItsNerisma/pi-auto-title) | Generate session titles automatically. |
 | [pi-codex-image-gen](https://www.npmjs.com/package/pi-codex-image-gen) | Generate and edit images through the Codex backend. |
-| [pi-tasks](https://www.npmjs.com/package/pi-tasks) | Track task plans, acceptance criteria and verification evidence. |
 | [pi-goal-x](https://www.npmjs.com/package/pi-goal-x) | Plan goals with `/goal`, track persistent progress and optionally audit completion. |
 | [pi-split-view](https://www.npmjs.com/package/pi-split-view) | Show thinking, tool activity and files in separate TUI panels. |
 
@@ -127,9 +126,9 @@ The live settings retain my device ID while the committed version omits it. Cons
 
 This refresh was prepared from a Linux installation running Pi 1.5.2. Preparation checks cover JSON validity, unpinned package declarations, the publication allowlist, exclusion of device identity from the commit, and the documented update command syntax.
 
-This is not a clean-install certification or an end-to-end test of every extension. Preparation did not update installed packages, exercise provider authentication or qualify macOS/Windows. A future installation may resolve newer dependencies than the ones used locally.
+This is not a clean-install certification or an end-to-end test of every extension. Publication checks do not exercise provider authentication or qualify macOS/Windows. A future installation may resolve newer dependencies than the ones used locally.
 
-Compared with the previous publication, this refresh removes Pi Studio, Pi Messenger and Ponytail. It adds Split View, Tasks, Goal X, Auto Title and Codex Image Gen to the published selection and reflects the current fullscreen TUI preference. No private workflow instructions are included.
+Compared with v0.5, this release removes pi-tasks from the extension selection. Goal X remains the goal and progress tracker. This avoids running a second task-contract workflow alongside goal orchestration; it is a setup choice, not a claim of shared-state corruption between the extensions. Other published preferences and package declarations are unchanged. No private workflow instructions are included.
 
 ## Maintenance and license
 
