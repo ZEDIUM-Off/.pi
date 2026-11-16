@@ -8,7 +8,7 @@ The repository lives directly in my `~/.pi`. [agent/settings.json](agent/setting
 
 ## Extension selection
 
-The `packages` array in [settings.json](agent/settings.json) is authoritative. Pick the packages you need rather than treating the whole list as mandatory.
+The `packages` array in [settings.json](agent/settings.json) is authoritative for Pi-managed packages. The separate [profile launcher](#profile-composition) uses a global installation. Pick the packages you need rather than treating the whole list as mandatory.
 
 | Package | Why it is in this setup |
 | --- | --- |
@@ -58,6 +58,36 @@ Some packages overlap intentionally: session search and analysis, web access and
 - **UI and images:** the system theme, fullscreen TUI, quiet startup and disabled image resizing are personal preferences. Keeping original image sizes can increase payloads.
 - **Changelog markers:** `lastChangelogVersion` and `extensionChangelogVersions` record previously seen versions; they are not dependency pins. You can omit them when adapting the file.
 - **Device identity:** the published file omits `deviceId`. Let Pi generate your own installation identifier when needed; do not copy one from another installation.
+
+## Profile composition
+
+I also use [pi-profile-switch](https://github.com/VincentFF/pi-profile-switch) to compose named Pi profiles from installed extensions, skills and tools. A profile can also select MCP servers and tools, declare a default model and thinking level, and add instructions. Profiles reference existing resources; they do not install them.
+
+Install this package globally with its own launcher, as the upstream documentation requires. Do not use `pi install` or add it to the `packages` array:
+
+```sh
+npm install -g pi-profile-switch
+pi-profile default
+```
+
+Launch with `pi-profile` to use the profile system. A direct `pi` launch does not activate it. Use `pi-profile <name>` to select a named profile at startup, or `/profile` and `/profile use <name>` to select one within the session. `/profile status` shows the active profile and its resource selection.
+
+Each profile is a JSON file at `~/.pi-profile-switch/profiles/<name>.json`, or at `.pi/profiles/<name>.json` in a trusted project. A project profile replaces a global profile with the same name. The reserved `default` profile keeps native Pi behavior.
+
+For example, save this as `~/.pi-profile-switch/profiles/read-only.json` to select read-only file tools and disable user-level skills, extensions and MCP servers:
+
+```json
+{
+  "skills": [],
+  "extensions": [],
+  "mcps": [],
+  "tools": ["read", "grep", "find", "ls"]
+}
+```
+
+Then run `pi-profile read-only`. These resource filters apply to user-level resources; trusted project resources remain visible under Pi's trust rules. The example is not a security sandbox. An omitted resource field leaves that resource kind unrestricted by the profile, while `[]` selects none. Use the supplied `profile-config` skill from the `default` profile to create or edit profiles conversationally. After a manual edit, run `/profile reload`.
+
+Installation checks confirmed pi-profile-switch 0.16.0, a launcher smoke test with Pi 1.5.2, and registration of the `/profile` command through Pi's RPC interface. Personal profile definitions and launcher runtime state remain outside this publication. Consult the upstream documentation for the full schema and resource-filter limits.
 
 ## Skill ownership
 
