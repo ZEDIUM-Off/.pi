@@ -29,6 +29,7 @@ The `packages` array in [settings.json](agent/settings.json) is authoritative fo
 | [pi-auto-title](https://github.com/ItsNerisma/pi-auto-title) | Generate session titles automatically. |
 | [pi-codex-image-gen](https://www.npmjs.com/package/pi-codex-image-gen) | Generate and edit images through the Codex backend. |
 | [pi-tasks](https://www.npmjs.com/package/pi-tasks) | Track task plans, acceptance criteria and verification evidence. |
+| [pi-goal-x](https://www.npmjs.com/package/pi-goal-x) | Plan goals with `/goal`, track persistent progress and optionally audit completion. |
 | [pi-split-view](https://www.npmjs.com/package/pi-split-view) | Show thinking, tool activity and files in separate TUI panels. |
 
 Codemode is enabled with `defaultTools: ["+codemode"]`. It is built into the Pi version used here, not another package to install.
@@ -128,7 +129,7 @@ This refresh was prepared from a Linux installation running Pi 1.5.2. Preparatio
 
 This is not a clean-install certification or an end-to-end test of every extension. Preparation did not update installed packages, exercise provider authentication or qualify macOS/Windows. A future installation may resolve newer dependencies than the ones used locally.
 
-Compared with the previous publication, this refresh removes Pi Studio, Pi Messenger and Ponytail. It adds Split View, Tasks, Auto Title and Codex Image Gen to the published selection and reflects the current fullscreen TUI preference. No private workflow instructions are included.
+Compared with the previous publication, this refresh removes Pi Studio, Pi Messenger and Ponytail. It adds Split View, Tasks, Goal X, Auto Title and Codex Image Gen to the published selection and reflects the current fullscreen TUI preference. No private workflow instructions are included.
 
 ## Maintenance and license
 

@@ -29,7 +29,8 @@
     "git:github.com/ItsNerisma/pi-auto-title",
     "npm:pi-codex-image-gen",
     "npm:pi-tasks",
-    "npm:pi-split-view"
+    "npm:pi-split-view",
+    "npm:pi-goal-x"
   ],
   "terminal": {
     "showTerminalProgress": false
